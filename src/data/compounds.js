@@ -7,11 +7,13 @@ export const CATEGORIES = {
   ACID_HIDR: "Ácidos Hidrácidos",
   OXACID: "Oxácidos",
   SAL_BIN: "Sales Binarias",
-  SAL_TER: "Sales Ternarias"
+  SAL_TER: "Sales Ternarias",
+  SAL_ACID: "Sales Ácidas",     // ¡NUEVO!
+  SAL_AMON: "Sales de Amonio"   // ¡NUEVO!
 };
 
 const rawCompounds = [
-  // --- ÓXIDOS METÁLICOS (Base + Nuevos) ---
+  // --- ÓXIDOS METÁLICOS ---
   { f: "Na2O", a: ["Oxido de sodio", "Oxido sodico"], t: "OX_MET" },
   { f: "K2O", a: ["Oxido de potasio", "Oxido potasico"], t: "OX_MET" },
   { f: "CaO", a: ["Oxido de calcio", "Oxido calcico"], t: "OX_MET" },
@@ -33,7 +35,7 @@ const rawCompounds = [
   { f: "Ni2O3", a: ["Oxido niquelico", "Oxido de niquel (III)"], t: "OX_MET" },
   { f: "CoO", a: ["Oxido cobaltoso", "Oxido de cobalto (II)"], t: "OX_MET" },
 
-  // --- ÓXIDOS NO METÁLICOS (Base + Nuevos) ---
+  // --- ÓXIDOS NO METÁLICOS ---
   { f: "CO2", a: ["Dioxido de carbono", "Anhidrido carbonico"], t: "OX_NO_MET" },
   { f: "CO", a: ["Monoxido de carbono", "Anhidrido carbonoso"], t: "OX_NO_MET" },
   { f: "SO2", a: ["Dioxido de azufre", "Anhidrido sulfuroso"], t: "OX_NO_MET" },
@@ -50,7 +52,7 @@ const rawCompounds = [
   { f: "SiO2", a: ["Dioxido de silicio", "Silice"], t: "OX_NO_MET" },
   { f: "B2O3", a: ["Anhidrido borico", "Oxido de boro"], t: "OX_NO_MET" },
 
-  // --- HIDRÓXIDOS (Base + Nuevos) ---
+  // --- HIDRÓXIDOS ---
   { f: "NaOH", a: ["Hidroxido de sodio"], t: "HIDROX" },
   { f: "Mg(OH)2", a: ["Hidroxido de magnesio"], t: "HIDROX" },
   { f: "Al(OH)3", a: ["Hidroxido de aluminio"], t: "HIDROX" },
@@ -67,7 +69,7 @@ const rawCompounds = [
   { f: "Sn(OH)2", a: ["Hidroxido estannoso"], t: "HIDROX" },
   { f: "Co(OH)3", a: ["Hidroxido cobaltico"], t: "HIDROX" },
 
-  // --- ÁCIDOS HIDRÁCIDOS (Base + Nuevos) ---
+  // --- ÁCIDOS HIDRÁCIDOS ---
   { f: "HCl", a: ["Acido clorhidrico", "Cloruro de hidrogeno"], t: "ACID_HIDR" },
   { f: "H2S", a: ["Acido sulfhidrico", "Sulfuro de hidrogeno"], t: "ACID_HIDR" },
   { f: "HF", a: ["Acido fluorhidrico", "Fluoruro de hidrogeno"], t: "ACID_HIDR" },
@@ -76,7 +78,7 @@ const rawCompounds = [
   { f: "H2Se", a: ["Acido selenhidrico", "Seleniuro de hidrogeno"], t: "ACID_HIDR" },
   { f: "H2Te", a: ["Acido telurhidrico", "Telururo de hidrogeno"], t: "ACID_HIDR" },
 
-  // --- OXÁCIDOS (Base + Nuevos) ---
+  // --- OXÁCIDOS ---
   { f: "H2SO4", a: ["Acido sulfurico"], t: "OXACID" },
   { f: "HNO3", a: ["Acido nitrico"], t: "OXACID" },
   { f: "H3PO4", a: ["Acido fosforico", "Acido ortofosforico"], t: "OXACID" },
@@ -94,7 +96,7 @@ const rawCompounds = [
   { f: "H3BO3", a: ["Acido borico"], t: "OXACID" },
   { f: "H4P2O7", a: ["Acido pirofosforico"], t: "OXACID" },
 
-  // --- SALES BINARIAS (Base + Nuevos) ---
+  // --- SALES BINARIAS ---
   { f: "NaCl", a: ["Cloruro de sodio"], t: "SAL_BIN" },
   { f: "KI", a: ["Yoduro de potasio"], t: "SAL_BIN" },
   { f: "FeCl3", a: ["Cloruro ferrico"], t: "SAL_BIN" },
@@ -111,7 +113,7 @@ const rawCompounds = [
   { f: "LiF", a: ["Fluoruro de litio"], t: "SAL_BIN" },
   { f: "SnCl4", a: ["Cloruro estannico"], t: "SAL_BIN" },
 
-  // --- SALES TERNARIAS (Base + Nuevos) ---
+  // --- SALES TERNARIAS ---
   { f: "CaCO3", a: ["Carbonato de calcio"], t: "SAL_TER" },
   { f: "NaNO3", a: ["Nitrato de sodio"], t: "SAL_TER" },
   { f: "K2SO4", a: ["Sulfato de potasio"], t: "SAL_TER" },
@@ -129,7 +131,35 @@ const rawCompounds = [
   { f: "KNO2", a: ["Nitrito de potasio"], t: "SAL_TER" },
   { f: "Cu(NO3)2", a: ["Nitrato cuprico"], t: "SAL_TER" },
   { f: "MgCO3", a: ["Carbonato de magnesio"], t: "SAL_TER" },
-  { f: "NaHCO3", a: ["Bicarbonato de sodio", "Carbonato acido de sodio"], t: "SAL_TER" }
+  
+  // --- SALES ÁCIDAS (NUEVAS) ---
+  { f: "NaHCO3", a: ["Bicarbonato de sodio", "Hidrogenocarbonato de sodio", "Carbonato acido de sodio"], t: "SAL_ACID" },
+  { f: "KHSO4", a: ["Bisulfato de potasio", "Hidrogenosulfato de potasio"], t: "SAL_ACID" },
+  { f: "Ca(HCO3)2", a: ["Bicarbonato de calcio", "Hidrogenocarbonato de calcio"], t: "SAL_ACID" },
+  { f: "NaH2PO4", a: ["Dihidrogenofosfato de sodio", "Fosfato diacido de sodio"], t: "SAL_ACID" },
+  { f: "K2HPO4", a: ["Hidrogenofosfato de potasio", "Fosfato monoacido de potasio"], t: "SAL_ACID" },
+  { f: "LiHCO3", a: ["Bicarbonato de litio", "Hidrogenocarbonato de litio"], t: "SAL_ACID" },
+  { f: "Mg(HSO3)2", a: ["Bisulfito de magnesio", "Hidrogenosulfito de magnesio"], t: "SAL_ACID" },
+  { f: "NaHS", a: ["Bisulfuro de sodio", "Hidrogenosulfuro de sodio"], t: "SAL_ACID" },
+  { f: "Ca(HSO4)2", a: ["Bisulfato de calcio", "Hidrogenosulfato de calcio"], t: "SAL_ACID" },
+  { f: "KH2PO4", a: ["Dihidrogenofosfato de potasio"], t: "SAL_ACID" },
+  { f: "Fe(HCO3)2", a: ["Bicarbonato ferroso", "Hidrogenocarbonato de hierro (II)"], t: "SAL_ACID" },
+  { f: "Cu(HSO4)2", a: ["Bisulfato cuprico", "Hidrogenosulfato de cobre (II)"], t: "SAL_ACID" },
+
+  // --- SALES DE AMONIO (NUEVAS) ---
+  { f: "NH4Cl", a: ["Cloruro de amonio"], t: "SAL_AMON" },
+  { f: "NH4NO3", a: ["Nitrato de amonio"], t: "SAL_AMON" },
+  { f: "(NH4)2SO4", a: ["Sulfato de amonio"], t: "SAL_AMON" },
+  { f: "(NH4)2CO3", a: ["Carbonato de amonio"], t: "SAL_AMON" },
+  { f: "NH4F", a: ["Fluoruro de amonio"], t: "SAL_AMON" },
+  { f: "NH4Br", a: ["Bromuro de amonio"], t: "SAL_AMON" },
+  { f: "NH4I", a: ["Yoduro de amonio"], t: "SAL_AMON" },
+  { f: "(NH4)3PO4", a: ["Fosfato de amonio"], t: "SAL_AMON" },
+  { f: "NH4HCO3", a: ["Bicarbonato de amonio"], t: "SAL_AMON" },
+  { f: "NH4NO2", a: ["Nitrito de amonio"], t: "SAL_AMON" },
+  { f: "(NH4)2S", a: ["Sulfuro de amonio"], t: "SAL_AMON" },
+  { f: "NH4ClO4", a: ["Perclorato de amonio"], t: "SAL_AMON" },
+  { f: "(NH4)2Cr2O7", a: ["Dicromato de amonio"], t: "SAL_AMON" }
 ];
 
 export const normalizeText = (text) => {
