@@ -276,7 +276,7 @@ const MainMenu = ({ onStart, onOpenSettings, onOpenAchievements, onOpenReminder,
 
     <div style={{marginTop: '20px', display: 'flex', gap: '10px', justifyContent: 'center', flexWrap:'wrap'}}>
       <button className="btn-icon" onClick={onOpenSettings}>⚙️ Configurar</button>
-      <button className="btn-icon" onClick={onOpenReminder} style={{borderColor: '#ffb7c5', color: '#ffb7c5'}}>💌 Amor</button>
+      <button className="btn-icon" onClick={onOpenReminder} style={{borderColor: '#ffb7c5', color: '#ffb7c5'}}>💌 Recordatorio</button>
       <button className="btn-icon" onClick={onOpenTransfer}>☁️ Guardar</button>
     </div>
   </div>
